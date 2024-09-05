@@ -1,25 +1,34 @@
-import logo from './logo.svg';
+import React, { useEffect } from 'react';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom'; // Changed from Switch to Routes
+import Header from './components/Header';
+import LoginBox from './components/LoginBox';
+import FarmerLogin from './components/FarmerLogin';
+import FarmerSignup from './components/FarmerSignup';
+import ContractorLogin from './components/ContractorLogin';
+import ContractorSignup from './components/ContractorSignup';
 import './App.css';
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 
-function App() {
+const App = () => {
+  useEffect(() => {
+    AOS.init();
+  }, []);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+      <div className="app">
+        <Header />
+        <Routes>
+          <Route path="/" element={<LoginBox />} />
+          <Route path="/farmer-login" element={<FarmerLogin />} />
+          <Route path="/farmer-signup" element={<FarmerSignup />} />
+          <Route path="/contractor-login" element={<ContractorLogin />} />
+          <Route path="/contractor-signup" element={<ContractorSignup />} />
+        </Routes>
+      </div>
+    </Router>
   );
-}
+};
 
 export default App;

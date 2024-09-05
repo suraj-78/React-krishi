@@ -1,0 +1,48 @@
+/* src/components/Card.css */
+.box {
+    background: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(10px);
+    padding: 40px;
+    border-radius: 20px;
+    box-shadow: 0 8px 32px rgba(31, 38, 135, 0.37);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    width: 280px;
+  }
+  
+  .box:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 12px 40px rgba(31, 38, 135, 0.4);
+  }
+  
+  .box h2 {
+    font-size: 1.8rem;
+    margin-bottom: 25px;
+    color: #3a915b;
+  }
+  
+  .box button {
+    width: 100%;
+    margin-bottom: 15px;
+    padding: 12px;
+    border: none;
+    border-radius: 25px;
+    font-size: 16px;
+    color: #fff;
+    background: linear-gradient(45deg, #3a915b, #a1f0c5);
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .box button:hover {
+    transform: scale(1.05);
+    box-shadow: 0px 8px 20px rgba(58, 145, 91, 0.4);
+  }
+  
+  .box button:last-child {
+    background: linear-gradient(45deg, #f39c12, #f1c40f);
+  }
+  
+  .box button:last-child:hover {
+    box-shadow: 0px 8px 20px rgba(243, 156, 18, 0.4);
+  }
+  
